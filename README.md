@@ -27,8 +27,7 @@ Create a management console with the following features:
 <td><p>Required</p></td>
 <td><p>Description</p></td>
 </tr>
-
-<tr><td><p>Field</p></td><td><p>Type</p></td><td><p>Required</p></td><td><p>Description</p></td></tr>
+  
   <tr><td><p>providerName</p></td><td><p>string</p></td><td><p>Required</p></td><td><p>The name of the feed provider. E.g.: &ldquo;Acme Productions&rdquo;.</p></td></tr>
   <tr><td><p>lastUpdated</p></td><td><p>string</p></td><td><p>Required</p></td><td><p>The date that the feed was last modified in<a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735580039363387&amp;usg=AOvVaw0DEQlGOPjBW_7SY8aSieqv">&nbsp;</a><a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735580039363523&amp;usg=AOvVaw2An-CzaSNnFzZUljZmvDIb">ISO 8601</a>&nbsp;format: {YYYY}-{MM}-{DD}T{hh}:{mm}:{ss}+{TZ}. For example, 2020-11-11T22:21:37+00:00</p></td></tr>
   <tr><td><p>language</p></td><td><p>string</p></td><td><p>Required</p></td><td><p>The language the channel uses for all its information and descriptions. (e.g., &ldquo;en&rdquo;, &ldquo;en-US&rdquo;, &ldquo;es&rdquo;, etc.). ISO 639 alpha-2 or alpha-3 language code string.</p></td></tr>
@@ -49,8 +48,6 @@ Create a management console with the following features:
 <td><p>Required</p></td>
 <td><p>Description</p></td>
 </tr>
-
-<tr class="c10"><td class="c29"><p class="c0"><span class="c3 c27">Field</span></p></td><td class="c8"><p class="c0"><span class="c3 c27">Type</span></p></td><td class="c28"><p class="c0"><span class="c3 c27">Required</span></p></td><td class="c16"><p class="c0"><span class="c3 c27">Description</span></p></td></tr>
 
 <tr class="c22"><td class="c12"><p class="c0"><span class="c3">id</span></p></td><td class="c8 c24"><p class="c0"><span class="c3">string</span></p></td><td class="c5"><p class="c0"><span class="c3">Required</span></p></td><td class="c16 c24"><p class="c0"><span class="c3 c4">An immutable string reference ID for the movie that does not exceed 50 characters. This should serve as a unique identifier for the movie across different locales.</span></p><p class="c0"><span class="c3">Once created, the ID for the content item may not be changed.</span></p></td></tr>
 
