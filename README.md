@@ -429,12 +429,67 @@ Create a management console with the following features:
 
 </table>
 
-
 ### categories
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
 
+<tr>
+<td ><p>name</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The name of the category that will show up in the channel.</p></td>
+</tr>
 
+<tr>
+<td ><p>playlistName</p></td>
+<td ><p>string</p></td>
+<td ><p>Required*</p></td>
+<td ><p>The name of the playlist in this feed that contains the content for this category.</p></td>
+</tr>
+
+<tr>
+<td ><p>query</p></td>
+<td ><p>string</p></td>
+<td ><p>Required*</p></td>
+<td ><p>The query that will specify the content for this category. It is a Boolean expression containing tags that you have provided in your content feed. The available operators are:AND</p><p>OR</p><p>You cannot use both operators in the same query; however, you can use more than one in a single query. For example, if your feed has the tags &quot;romance&quot;, &quot;movie&quot;, &quot;korean&quot; and &quot;dramas&quot;, you could do:movie AND korean</p><p>movie AND korean AND dramas</p><p>romance OR dramas</p><p>The following is NOT supported:movie AND romance OR dramas</p></td>
+</tr>
+
+<tr>
+<td ><p>order</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>The order of the category. Must be one of the following:manual: For playlists only</p><p>most_recent: reverse chronological order</p><p>chronological: the order in which the content was published (e.g., Episode 1, Episode 2, etc.)</p><p>most_popular: sort by popularity (based on Roku usage data).</p></td>
+</tr>
+
+</table>
 
 ### playlists
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>name</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The name of the playlist. The name is limited to 20 characters.</p></td>
+</tr>
+
+<tr>
+<td ><p>itemIds</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>An ordered list of one or more item IDs. An item ID is the ID of a movie/series/short-form video/TV special</p></td>
+</tr>
+
+</table>
 
 <hr />
 
