@@ -1,8 +1,8 @@
 namespace RFMDev1
 {
-    public partial class Form1 : Form
+    public partial class FRMMain : Form
     {
-        public Form1()
+        public FRMMain()
         {
             InitializeComponent();
         }
