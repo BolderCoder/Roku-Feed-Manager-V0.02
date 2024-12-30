@@ -74,6 +74,370 @@ Create a management console with the following features:
 <tr class="c10"><td class="c13"><p class="c0"><span class="c3">externalIds</span></p></td><td class="c8"><p class="c0"><span class="c11"><a class="c7" href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23externalids&amp;sa=D&amp;source=editors&amp;ust=1735580784451127&amp;usg=AOvVaw1GBWIsevOYPzDqjxWPvo36">External ID Object</a></span></p></td><td class="c2"><p class="c0"><span class="c3">Optional</span></p></td><td class="c9"><p class="c0"><span class="c3">One or more third-party metadata provider IDs.</span></p></td></tr>
 </table>
 
+### liveFeed
+<table><tr>
+
+<tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>id</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>An immutable string reference ID for the live feed that does not exceed 50 characters. This should serve as a unique identifier for the live feed across different locales.</p><p>Once created, the ID for the content item may not be changed.</p></td>
+</tr>
+
+<tr>
+<td ><p>title</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The title of the live stream in plain text. This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>content</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23content&amp;sa=D&amp;source=editors&amp;ust=1735596163951143&amp;usg=AOvVaw19hAuv7uy2xPRwy3FUqOGD">Content Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>The actual video content, such as the URL of the live stream.</p></td>
+</tr>
+
+<tr>
+<td ><p>thumbnail</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the primary thumbnail for the live stream. This is used within the channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).</p></td>
+</tr>
+
+<tr>
+<td ><p>brandedThumbnail</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the secondary thumbnail for the live stream. This is used as a backup in the event that the primary image is not suitable. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).</p></td>
+</tr>
+
+<tr>
+<td ><p>shortDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A live stream description that does not exceed 200 characters. The text will be clipped if longer.</p></td>
+</tr>
+
+<tr>
+<td ><p>longDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A longer live stream description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.</p></td>
+</tr>
+
+<tr>
+<td ><p>tags</p></td>
+<td ><p>array</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A list of one or more tags (for example, &ldquo;dramas&rdquo;, &ldquo;korean&rdquo;, and so on). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a category and to find content for content curation purposes.</p></td>
+</tr>
+
+<tr>
+<td ><p>rating</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23rating&amp;sa=D&amp;source=editors&amp;ust=1735596163957193&amp;usg=AOvVaw3CgljF8XDOjzdPHmfP2HqK">Rating Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>A parental rating for the content.</p></td>
+</tr>
+
+<tr>
+<td ><p>genres</p></td>
+<td ><p>array</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A list of strings describing the genre(s) of the content. Must be one of the values listed in<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596163958840&amp;usg=AOvVaw3BdpdH6NRqkilIZ37NqCH4">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596163959001&amp;usg=AOvVaw0bq5Noq4qH-ht2YRSZUnrq">Genres</a>.</p></td>
+</tr>
+</table>
+
+### series
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>id</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>An immutable string reference ID for the series that does not exceed 50 characters. This should serve as a unique identifier for the series across different locales.</p><p>Once created, the ID for the content item may not be changed.</p></td>
+</tr>
+
+<tr>
+<td ><p>title</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The title of the series in plain text. This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>seasons</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23season&amp;sa=D&amp;source=editors&amp;ust=1735596441094037&amp;usg=AOvVaw2Ms6q_fwcGrqXXp-4H9Ufp">Season Object</a></p></td>
+<td ><p>Required*</p></td>
+<td ><p>One or more seasons of the series. Seasons should be used if episodes are grouped by seasons.</p></td>
+</tr>
+
+<tr>
+<td ><p>episodes</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23episode&amp;sa=D&amp;source=editors&amp;ust=1735596441095454&amp;usg=AOvVaw2NclnsGHfG9Pb_A_OeMJay">Episode Object</a></p></td>
+<td ><p>Required*</p></td>
+<td ><p>One or more episodes of the series. Episodes should be used if they are not grouped by seasons (e.g., a mini-series).</p></td>
+</tr>
+
+<tr>
+<td ><p>genres</p></td>
+<td ><p>array</p></td>
+<td ><p>Required</p></td>
+<td ><p>A list of strings describing the genre(s) of the series. Must be one of the values listed in<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596441097203&amp;usg=AOvVaw2__0fq5cdDSC-cqXXY0_Xr">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596441097453&amp;usg=AOvVaw0dL1haJam_Mptpx24HSLpF">Genres</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>thumbnail</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the thumbnail for the series. This is used within the channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).</p></td>
+</tr>
+
+<tr>
+<td ><p>releaseDate</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The date the series first aired. This field is used to sort programs chronologically and group related content in Roku Search. Conforms to<a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735596441099782&amp;usg=AOvVaw2IrOJ4jlJ3WU1cgGzW5K97">&nbsp;</a><a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735596441100035&amp;usg=AOvVaw08zof58CPra-KEtlDYmSjQ">ISO 8601</a>&nbsp;format: {YYYY}-{MM}-{DD}. For example, 2020-11-11</p></td>
+</tr>
+
+<tr>
+<td ><p>shortDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A description of the series that does not exceed 200 characters. The text will be clipped if longer.</p></td>
+</tr>
+
+<tr>
+<td ><p>longDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A longer movie description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.</p></td>
+</tr>
+
+<tr>
+<td ><p>tags</p></td>
+<td ><p>Array</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A list of one or more tags (for example, &ldquo;dramas&rdquo;, &ldquo;korean&rdquo;, and so on). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23category&amp;sa=D&amp;source=editors&amp;ust=1735596441103490&amp;usg=AOvVaw2smEle_--ATnrKrOzhj0Qe">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23category&amp;sa=D&amp;source=editors&amp;ust=1735596441103745&amp;usg=AOvVaw1vptFiQRQs236L1yON-8sN">category</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>credits</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23credit&amp;sa=D&amp;source=editors&amp;ust=1735596441104499&amp;usg=AOvVaw0rSvHh4FYv1Ubd1RmS8Hvw">Credit Object</a></p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more credits. The cast and crew of the series.</p></td>
+</tr>
+
+<tr>
+<td ><p>externalIds</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23externalids&amp;sa=D&amp;source=editors&amp;ust=1735596441105666&amp;usg=AOvVaw3VCfQy1FSGKCQt51wzIxIP">External ID Object</a></p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more third-party metadata provider IDs.</p></td>
+</tr>
+</table>
+
+### shortFormVideos
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>id</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>An immutable string reference ID for the video that does not exceed 50 characters. This should serve as a unique identifier for the episode across different locales.</p><p>Once created, the ID for the content item may not be changed.</p></td>
+</tr>
+
+<tr>
+<td ><p>title</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The title of the video in plain text. This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>content</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23content&amp;sa=D&amp;source=editors&amp;ust=1735596839046281&amp;usg=AOvVaw3SVTul9bcdeaPyQqw10Lir">Content Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>The video content, such as the URL of the video file, subtitles, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>thumbnail</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the thumbnail for the video. This is used within your channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).</p></td>
+</tr>
+
+<tr>
+<td ><p>shortDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A description of the video that does not exceed 200 characters. The text will be clipped if longer.</p></td>
+</tr>
+
+<tr>
+<td ><p>releaseDate</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The date the video first became available. This field is used to sort programs chronologically and group related content in Roku Search. Conforms to<a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735596839049553&amp;usg=AOvVaw0FtqiMQZfZJ4umK-tYIAUn">&nbsp;</a><a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735596839049651&amp;usg=AOvVaw0Ydp_YqpLkQ9RADvcEhA8n">ISO 8601</a>&nbsp;format: {YYYY}-{MM}-{DD}. For example, 2020-11-11</p></td>
+</tr>
+
+<tr>
+<td ><p>longDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A longer description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.</p></td>
+</tr>
+
+<tr>
+<td ><p>tags</p></td>
+<td ><p>string</p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more tags (e.g., &ldquo;dramas&rdquo;, &ldquo;korean&rdquo;, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a category.</p></td>
+</tr>
+
+<tr>
+<td ><p>genres</p></td>
+<td ><p>array</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A list of strings describing the genre(s) of the video. Must be one of the values listed in<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596839052523&amp;usg=AOvVaw10LgeQsNGP6XyzC1-OzZEZ">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735596839052651&amp;usg=AOvVaw2YhGQRVt0o9U5zVbFHKOYG">genres</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>credits</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://confluence.portal.roku.com:8443/display/DR/The%2BRoku%2BChannel%2BFeed%2BSpecification%252C%2Bv2.3%23TheRokuChannelFeedSpecification,v2.3-creditProperty&amp;sa=D&amp;source=editors&amp;ust=1735596839053328&amp;usg=AOvVaw3_c38tkJD9oH2gf5da8hmn">Credit Object</a></p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more credits. The cast and crew of the video.</p></td>
+</tr>
+
+<tr>
+<td ><p>rating</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://confluence.portal.roku.com:8443/display/DR/The%2BRoku%2BChannel%2BFeed%2BSpecification%252C%2Bv2.3%23TheRokuChannelFeedSpecification,v2.3-ratingProperty&amp;sa=D&amp;source=editors&amp;ust=1735596839054531&amp;usg=AOvVaw1O6-uOVXUUtl4oUZ0Z40kE">Rating Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>A parental rating for the content.</p></td>
+</tr>
+
+</table>
+
+### tvSpecials
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>id</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>An immutable string reference ID for the TV special that does not exceed 50 characters. This should serve as a unique identifier for the TV special across different locales.</p><p>Once created, the ID for the content item may not be changed.</p></td>
+</tr>
+
+<tr>
+<td ><p>title</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The title of the TV special in plain text. This field is used for matching in Roku Search. Do not include extra information such as year, version label, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>content</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23content&amp;sa=D&amp;source=editors&amp;ust=1735597139039131&amp;usg=AOvVaw0dEXkWd18kn4IW7SUAL4q9">Content Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>The video content, such as the URL of the video file, subtitles, and so on.</p></td>
+</tr>
+
+<tr>
+<td ><p>thumbnail</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the thumbnail for the TV special. This is used within the channel and in search results. Image dimensions must be at least 800x450 (width x height, 16x9 aspect ratio).</p></td>
+</tr>
+
+<tr>
+<td ><p>genres</p></td>
+<td ><p>array</p></td>
+<td ><p>Required</p></td>
+<td ><p>A list of strings describing the genre(s) of the movie. Must be one of the values listed in<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735597139044635&amp;usg=AOvVaw3clz_twjtXb77u8qiCVdfk">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23genres&amp;sa=D&amp;source=editors&amp;ust=1735597139045220&amp;usg=AOvVaw1vfcPu5it85kGCJFg0wfXu">Genres</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>releaseDate</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The date the TV special first aired. This field is used to sort programs chronologically and group related content in Roku Search. Conforms to<a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735597139047954&amp;usg=AOvVaw0Et6EvrCmUATGf1FT62Pzz">&nbsp;</a><a href="https://www.google.com/url?q=http://www.iso.org/iso/home/standards/iso8601.htm&amp;sa=D&amp;source=editors&amp;ust=1735597139048389&amp;usg=AOvVaw1PZgjTN6Wdlgc5h6fovWhY">ISO 8601</a>&nbsp;format: {YYYY}-{MM}-{DD}. For example, 2020-11-11</p></td>
+</tr>
+
+<tr>
+<td ><p>shortDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A description of the TV special that does not exceed 200 characters. The text will be clipped if longer.</p></td>
+</tr>
+
+<tr>
+<td ><p>longDescription</p></td>
+<td ><p>string</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A longer episode description that does not exceed 500 characters. The text will be clipped if longer. Must be different from shortDescription.</p></td>
+</tr>
+
+<tr>
+<td ><p>credits</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23credit&amp;sa=D&amp;source=editors&amp;ust=1735597139054318&amp;usg=AOvVaw06qHaZPAO1Ca1fePnBIum-">Credit Object</a></p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more credits. The cast and crew of the TV special.</p></td>
+</tr>
+
+<tr>
+<td ><p>rating</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23rating&amp;sa=D&amp;source=editors&amp;ust=1735597139057193&amp;usg=AOvVaw1kFfcGVHECxnWJtHcHHEaL">Rating Object</a></p></td>
+<td ><p>Required</p></td>
+<td ><p>A parental rating for the content.</p></td>
+</tr>
+
+<tr>
+<td ><p>tags</p></td>
+<td ><p>Array</p></td>
+<td ><p>Optional</p></td>
+<td ><p>A list of one or more tags (e.g., &ldquo;dramas&rdquo;, &ldquo;korean&rdquo;, etc). Each tag is a string and is limited to 20 characters. Tags are used to define what content will be shown within a<a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23category&amp;sa=D&amp;source=editors&amp;ust=1735597139061070&amp;usg=AOvVaw23SCfHvfmukTkgCQpRtlgM">&nbsp;</a><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23category&amp;sa=D&amp;source=editors&amp;ust=1735597139061578&amp;usg=AOvVaw1risaJdymLixx9xEDQeaO0">category</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>externalIds</p></td>
+<td ><p><a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23externalids&amp;sa=D&amp;source=editors&amp;ust=1735597139063104&amp;usg=AOvVaw38Q1QKmEUiagiCClzmHwBR">External ID Object</a></p></td>
+<td ><p>Optional</p></td>
+<td ><p>One or more third-party metadata provider IDs.</p></td>
+</tr>
+
+</table>
+
+
+### categories
+
+
+
+### playlists
+
+<hr />
+
 ### content
 
 <table>
