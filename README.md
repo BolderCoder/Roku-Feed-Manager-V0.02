@@ -595,5 +595,140 @@ Create a management console with the following features:
 <td ><p>Required</p></td>
 <td ><p>Must be one of the following:HLS</p><p>SMOOTH</p><p>DASH</p><p>MP4</p><p>MOV</p><p>M4V</p><p></p><p>Provided videos must be unencrypted because there is no encryption support:</p><p>Audio should be as follows:Minimum: first track of Stereo</p><p>Preferred: second track of Dolby (optional)</p></td>
 </tr>
+</table>
+
+## captions
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>url</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL of the video caption file. The URL must use the secure protocol prefix &quot;https://&quot;.</p><p>Supported formats are described in <a href="https://www.google.com/url?q=https://developer.roku.com/docs/developer-program/media-playback/closed-caption.md&amp;sa=D&amp;source=editors&amp;ust=1735598246838427&amp;usg=AOvVaw1DC5bqHzdKll85aMuhSkkf">Closed Caption Support</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>language</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>A language code for the subtitle (e.g., &ldquo;en&rdquo;, &ldquo;es-mx&rdquo;, &ldquo;fr&rdquo;, etc). <a href="https://www.google.com/url?q=https://www.loc.gov/standards/iso639-2/php/code_list.php&amp;sa=D&amp;source=editors&amp;ust=1735598246839066&amp;usg=AOvVaw25n52Y9LZZdCSKzKQVdxQY">ISO 639-2 or alpha-3</a>&nbsp;language code string.</p></td>
+</tr>
+
+<tr>
+<td ><p>captionType</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>The type of caption. Default is SUBTITLE. Must be one of the following:</p><ul class="c19 lst-kix_8gwbacywlvhx-0 start"><li class="c13 li-bullet-0">CLOSED_CAPTION</li><li class="c13 li-bullet-0">SUBTITLE</li></ul></td>
+</tr>
+</table>
+
+### trickPlayFiles
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>url</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The URL to the image representing the trickplay file. The URL must use the secure protocol prefix &quot;https://&quot;.</p></td>
+</tr>
+
+<tr>
+<td ><p>quality</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>Must be one of the following:</p><ul class="c14 lst-kix_hsk1wvxdvn3t-0 start"><li class="c3 li-bullet-0">HD &ndash; 720p</li><li class="c3 li-bullet-0">FHD &ndash; 1080p</li></ul></td>
+</tr>
+</table>
+
+<hr />
+
+### credits
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>name</p></td>
+<td ><p>string</p></td>
+<td ><p>required</p></td>
+<td ><p>name of the person</p></td>
+</tr>
+
+<tr>
+<td ><p>role</p></td>
+<td ><p>enum</p></td>
+<td ><p>required</p></td>
+<td ><p>The role of the person, which must be one of the following values:</p><ul class="c15 lst-kix_mqj03whkvfzm-0 start"><li class="c7 li-bullet-0">actor</li><li class="c7 li-bullet-0">anchor</li><li class="c7 li-bullet-0">host</li><li class="c7 li-bullet-0">narrator</li><li class="c7 li-bullet-0">voice</li><li class="c7 li-bullet-0">director</li><li class="c7 li-bullet-0">producer</li><li class="c7 li-bullet-0">screenwriter</li></ul></td>
+</tr>
+
+<tr>
+<td ><p>birthDate</p></td>
+<td ><p>string</p></td>
+<td ><p>required</p></td>
+<td ><p>birthdate of the person</p></td>
+</tr>
+</table>
+
+### rating
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>rating</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>Must be a value listed in <a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23parental-ratings&amp;sa=D&amp;source=editors&amp;ust=1735609196822416&amp;usg=AOvVaw08cP87D77gHEm4rv3whRH9">Parental ratings</a></p><p>Do not include any content targeted specifically to children.</p><p></p><p>If you specify UNRATED, you do not need to provide the &quot;ratingSource&quot; field.</p></td>
+</tr>
+
+<tr>
+<td ><p>ratingSource</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>Must be one of the following:</p><ul class="c16 lst-kix_ww9l91nj0ybo-0 start"><li class="c7 li-bullet-0">BBFC</li><li class="c7 li-bullet-0">CHVRS</li><li class="c7 li-bullet-0">CLASSIND</li><li class="c7 li-bullet-0">CPR</li><li class="c7 li-bullet-0">FSF</li><li class="c7 li-bullet-0">FSK</li><li class="c7 li-bullet-0">MPAA</li><li class="c7 li-bullet-0">UK_CP</li><li class="c7 li-bullet-0">USA_PR</li></ul><p>See <a href="https://www.google.com/url?q=https://developer.roku.com/docs/specs/direct-publisher-feed-specs/json-dp-spec.md%23rating-sources&amp;sa=D&amp;source=editors&amp;ust=1735609196824736&amp;usg=AOvVaw1UNxsu0JIyZoPL0RWaBJ3V">Rating sources</a>&nbsp;for more information.</p></td>
+</tr>
 
 </table>
+
+
+### externalIds
+<table><tr>
+<td ><p>Field</p></td>
+<td ><p>Type</p></td>
+<td ><p>Required</p></td>
+<td ><p>Description</p></td>
+</tr>
+
+<tr>
+<td ><p>id</p></td>
+<td ><p>string</p></td>
+<td ><p>Required</p></td>
+<td ><p>The third-party metadata provider ID for the video content.</p><p></p><p>If IMDB was being used for example, the last part of the URL of a movie would be used such as &quot;<a href="https://www.google.com/url?q=http://www.imdb.com/title/tt0371724%2522&amp;sa=D&amp;source=editors&amp;ust=1735609380959327&amp;usg=AOvVaw37Cc0uRvpgegv3C0s1gp4e">http://www.imdb.com/title/tt0371724&quot;</a>.</p></td>
+</tr>
+
+<tr>
+<td ><p>idType</p></td>
+<td ><p>enum</p></td>
+<td ><p>Required</p></td>
+<td ><p>Must be one of the following:</p><ul class="c18 lst-kix_hqqnq0g9d90a-0 start"><li class="c13 li-bullet-0">TMS &ndash; A Tribune Metadata Service ID for the content</li><li class="c13 li-bullet-0">ROVI - A Rovi ID for the content</li><li class="c13 li-bullet-0">IMDB &ndash; An Internet Movie Database ID</li><li class="c13 li-bullet-0">EIDR &ndash; An Entertainment Identifier Registry ID</li></ul></td>
+</tr>
+
+</table>
+
+
